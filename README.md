@@ -34,3 +34,19 @@ task-specific commands:
 | `/morning-note`    | Morning meeting note                                       |
 
 Most take an optional ticker or topic, e.g. `/earnings NVDA Q3 2025`.
+
+## MCP servers
+
+`.mcp.json` wires up the [`tradingview-mcp`](https://github.com/atilaahmettaner/tradingview-mcp)
+server, giving Claude Code direct access to real-time market data, 37 technical
+indicators, screeners, and backtesting (9 strategies) across stocks, crypto,
+forex, and futures — on top of the equity-research plugin's report workflows.
+
+It launches via `uvx`, so [`uv`](https://docs.astral.sh/uv/) must be installed
+and on `PATH`. No API key is required for core market data. To enable the
+`financial_news` and `market_sentiment` tools, set a free
+[MarketAux](https://www.marketaux.com/) token before starting Claude Code:
+
+```
+export MARKETAUX_API_TOKEN=your_token_here
+```
